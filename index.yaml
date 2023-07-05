@@ -1,0 +1,11 @@
+indexes:
+
+- kind: Review
+  properties:
+  - name: product_type
+  - name: date
+
+- kind: Review
+  properties:
+  - name: asin
+  - name: date

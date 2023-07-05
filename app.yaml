@@ -1,0 +1,20 @@
+#runtime: python39
+#entrypoint: gunicorn -b :$PORT main:server
+instance_class: F2
+#
+#env_variables:
+#  GOOGLE_APPLICATION_CREDENTIALS: ./aireview-390315-dbc9bdbd91aa.json
+#    GOOGLE_CLOUD_PROJECT: aireview-390315
+#
+#automatic_scaling:
+#    target_cpu_utilization: 0.65
+#    min_instances: 1
+#    max_instances: 1
+#    target_throughput_utilization: 0.2
+
+runtime: python39
+entrypoint: gunicorn -b :$PORT main:server
+
+handlers:
+- url: /.*
+  script: auto
